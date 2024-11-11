@@ -34,14 +34,14 @@ class GamesController < ApplicationController
       @score = 0
     # Le mot est valide d’après la grille, mais ce n’est pas un mot anglais valide.
     elsif dictionnary["found"] == false
-      @message_to_user = "Sorry but #{@word.upcase} does not seemto be an English word!"
+      @message_to_user = "Sorry but #{@word.upcase} does not seem to be an English word!"
       @score = 0
     # Le mot est valide d’après la grille et est un mot anglais valide.
     else
       @message_to_user = "Congratulations! #{@word.upcase} is a valid English word!"
       @score = @word.length ** 2
     end
-    
+
   # calcul du total de points de l'utilisateur
   session[:total_score] == nil ? session[:total_score] = @score : session[:total_score] += @score
   end
