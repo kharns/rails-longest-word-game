@@ -1,4 +1,8 @@
-<h1>Your Score :</h1>
-
-
-<%= link_to "New game", new_path %>
+<div class="contain">
+  <h1>Result</h1>
+  <p><%= @message_to_user %></p>
+  <p><%="You made #{@score} points"%></p>
+  <%# TOTAL SCORE %>
+  <p><%="Your total score is #{session[:total_score]}"%></p>
+  <%= link_to "New game", new_path %>
+</div>
